@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Layout from "../../components/Layout";
 import axios from "axios";
 import List from "../../components/List";
+import Carousel from "../../components/Carousel";
 
 const HomePage = () => {
     const [movies, setMovies] = useState([])
@@ -13,8 +14,10 @@ const HomePage = () => {
     }, [])
     return (
         <Layout>
+            <div className={'carousel-wrapper'}>
+                <Carousel movies={movies}/>
+            </div>
             <div className="container">
-                <h2>Home page</h2>
                 <List movies={movies}/>
             </div>
         </Layout>
